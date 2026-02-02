@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>LunoBurrinha</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Imagem clicável -->
+  <img src="imagem.jpg" id="foto" alt="Clique para tocar o som">
+
+  <!-- Áudio -->
+  <audio id="musica">
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const foto = document.getElementById("foto");
+    const musica = document.getElementById("musica");
+
+    foto.addEventListener("click", () => {
+      musica.currentTime = 0; // reinicia o som
+      musica.play();         // toca completo
+    });
+  </script>
+
+</body>
+</html>
